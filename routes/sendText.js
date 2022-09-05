@@ -8,7 +8,7 @@ const client = new twilio(
   process.env.TWILIO_AUTH_TOKEN
 );
 
-router.get('/send-text',async(req,res) => {
+router.get('/',async(req,res) => {
   // Welcome Message
   res.send('Welcome to the Network');
 

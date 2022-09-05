@@ -3,7 +3,7 @@ const Message = require('../models/Message');
 
 const router = express.Router();
 
-router.get('/messages',async(req,res) => {
+router.get('/',async(req,res) => {
   try {
     const messages = await Message.find().sort({date: -1});
     res.json(messages)
