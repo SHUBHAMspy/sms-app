@@ -1,0 +1,29 @@
+{
+  "name": "sms-app",
+  "version": "1.0.0",
+  "description": "sends sms to contacts",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "SET \"NODE_ENV=development\" && nodemon server.js",
+    "client": "npm start --prefix client",
+    "clientinstall": "npm install --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "shubham pandey",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.2",
+    "helmet": "^6.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.5.4",
+    "nodemon": "^2.0.19",
+    "twilio": "^3.81.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.2"
+  }
+}
