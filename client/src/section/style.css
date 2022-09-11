@@ -1,0 +1,12 @@
+@media (min-width: 1024px) {
+  .contacts-container .container {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+  }
+
+  .contacts-box { min-width: calc(75% - 15px); }
+}

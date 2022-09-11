@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const config = require("./config");
 const Contact = require("./models/Contact");
 const contacts = [
   {
@@ -11,10 +12,12 @@ const contacts = [
   },
   {
     name:"Tinder Less",
+    email:"iamtinderless@outlook.com",
     phone:"+919810153260"
   },
   {
     name:"Khiladi Kumar",
+    email:"khiladikumar@gmail.com",
     phone:"+919810153260"
   },
   {
@@ -25,7 +28,7 @@ const contacts = [
 
 async function seed() {
   try {
-    // await mongoose.connect(process.env.MONGODB_URI);
+    await mongoose.connect(config.mongoURI);
     await Contact.deleteMany({})
     await Contact.insertMany(contacts)
 

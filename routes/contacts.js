@@ -14,7 +14,7 @@ router.use(auth);
 // @access    Private
 router.get('/', async (req, res) => {
   try {
-    const contacts = await Contact.find({ user: req.user.id }).sort({
+    const contacts = await Contact.find().sort({
       date: -1
     });
     res.json(contacts);

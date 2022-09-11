@@ -13,3 +13,5 @@ router.get('/',async(req,res) => {
     res.status(500).json({err: {msg: 'server error'}});
   }
 })
+
+module.exports = router;

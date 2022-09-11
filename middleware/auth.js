@@ -2,8 +2,8 @@ const jwt = require('jsonwebtoken');
 const config = require('../config');
 
 
-const jwtSecret = process.env.JWT_SECRET || config.privateKEY
-
+const jwtSecret =  config.privateKEY || process.env.JWT_SECRET 
+console.log(jwtSecret);
 module.exports = (req, res, next) => {
   /**
    * @todo could use Authentication: Bearer <token> schema

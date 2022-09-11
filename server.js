@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express');
+const cors = require('cors')
 const { default: helmet } = require('helmet');
 const connectDb = require('./db');
 
@@ -11,6 +12,12 @@ connectDb();
 // Init Middlewares
 app.use(helmet());
 app.use(express.json({ extended: false }));
+app.use(cors({
+  origin:'http://localhost:3000', 
+        credentials:true,  //access-control-allow-credentials:true
+        methods:['GET','POST','PUT','DELETE'],
+        allowedHeaders:['Content-Type','x-auth-token']
+}))
 
 // Define Routes
 //POST user registration
